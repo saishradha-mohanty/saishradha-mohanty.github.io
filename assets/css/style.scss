@@ -91,17 +91,82 @@ p { margin: 0 0 1.05em 0; text-wrap: pretty; }
 
 /* ---------- left rail ---------- */
 #masthead { grid-column: 1; position: sticky; top: 0; padding: 46px 0 0 0; }
+
+.profile-sidebar {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.profile-photo {
+  display: block;
+  width: 160px;
+  height: 160px;
+  border-radius: 8px;
+  margin: 0 auto 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
 #sitename {
   display: block;
   font-family: var(--serif);
-  font-size: 1.96em;
-  line-height: 1.08;
+  font-size: 1.5em;
+  line-height: 1.2;
   color: var(--primary);
   border: 0;
-  padding-bottom: 16px;
-  border-bottom: 2px solid var(--primary);
+  margin: 0 0 8px 0;
+  font-weight: 400;
 }
+
 #sitename:hover { color: var(--accent); }
+
+.profile-position {
+  font-size: 0.95em;
+  color: var(--muted);
+  margin: 0 0 8px 0;
+  font-weight: 500;
+}
+
+.profile-affiliation {
+  font-size: 0.9em;
+  color: var(--faint);
+  margin: 0 0 12px 0;
+}
+
+.profile-affiliation a {
+  color: var(--primary);
+  border-bottom: 1px solid color-mix(in srgb, var(--primary) 30%, transparent);
+}
+
+.profile-contact {
+  font-size: 0.85em;
+  color: var(--faint);
+  margin: 12px 0;
+}
+
+.contact-label {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+  font-size: 1.3em;
+}
+
+.social-links a {
+  color: var(--primary);
+  border: 0;
+  transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent);
+}
+
 #menu ul { list-style: none; margin: 0; padding: 20px 0 0 0; display: flex; flex-direction: column; gap: 11px; }
 #menu a { display: block; border: 0; color: var(--muted); font-size: 1.18em; line-height: 1.3; }
 #menu a:hover { color: var(--accent); }
@@ -177,8 +242,10 @@ ul.timeline .note { display: block; color: var(--muted); margin-top: 3px; }
 /* ---------- small screens ---------- */
 @media (max-width: 900px) {
   body { display: block; font-size: 16px; padding: 0 20px; }
-  #masthead { position: static; padding: 24px 0 0 0; }
-  #sitename { font-size: 1.9em; padding-bottom: 10px; border-bottom: 0; }
+  #masthead { position: static; padding: 24px 0 0 0; margin-bottom: 32px; }
+  .profile-sidebar { margin-bottom: 24px; }
+  .profile-photo { width: 140px; height: 140px; }
+  #sitename { font-size: 1.5em; padding-bottom: 10px; border-bottom: 0; }
   #menu ul { flex-direction: row; flex-wrap: wrap; gap: 6px 20px; padding: 0 0 14px 0; border-bottom: 2px solid var(--primary); }
   #content { padding: 22px 0 56px 0; }
   .hero { grid-template-columns: minmax(0, 1fr); gap: 26px; }
